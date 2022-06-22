@@ -1,0 +1,23 @@
+Standartmässig eingestellt, bei User/Admin ist der Root Nutzer
+
+
+Optionaler Schritt:
+Admin/User MYSQL Benutzer Erstellen sowie Berechtigungen festlegen.
+
+Admin MySQL Benutzer:
+
+CREATE USER 'admin'@'localhost' IDENTIFIED BY ')xNy?9|pe%';
+GRANT SELECT, DELETE, INSERT, UPDATE ON M151_DB_Tobias_Odermatt.user TO admin@'localhost';
+GRANT SELECT, DELETE, UPDATE, INSERT ON M151_DB_Tobias_Odermatt.category TO admin@'localhost';
+GRANT SELECT, DELETE, UPDATE, INSERT ON M151_DB_Tobias_Odermatt. user_has_category TO admin@'localhost';
+User MySQL Benutzer
+
+CREATE USER 'user@'localhost' IDENTIFIED BY 'kfS~}*3>vB';
+GRANT SELECT ON M151_DB_Tobias_Odermatt.user TO user'localhost';
+GRANT SELECT ON M151_DB_Tobias_Odermatt.category TO user@'localhost';
+GRANT SELECT ON M151_DB_Tobias_Odermatt.user_has_category TO user@'localhost';
+
+
+WICHTIG:
+Werden die Nutzer erstellt müssen die 2 Benutzer in der "lib/dbconnector.inc.php" 
+eingetragen werden.
