@@ -1,13 +1,13 @@
 # Die ToDo Verwaltungssoftware V.1.0.0
 ## Beschreibung:
 Das ganze System ist durch zwei Nutzertypen unterteilt Admin und normale Benutzer,
-diese Software ermöglicht bequeme ToDos zu Verwaltung, und diese zu kategorisieren.
-der Admin verwaltet diese Kategorien.
+diese Software ermöglicht bequem ToDos zu verwalten, und diese zu kategorisieren.
+Der Admin verwaltet diese Kategorien.
 
 
 + Die Ussability ermöglicht es ohne grosse Instruktionen die Software zu nutzen.
 + Jegliche Passwörter werden gehasht in der MySQL Datenbank abgelegt.
-+ Jegliche Formfelder werden sicher server- clienteitig validiert
++ Jegliche Formfelder werden sicher Server- \Clientseitig validiert
 
 #### Der Admin kann:
 + Benutzer ansehen, erstellen, bearbeiten, löschen
