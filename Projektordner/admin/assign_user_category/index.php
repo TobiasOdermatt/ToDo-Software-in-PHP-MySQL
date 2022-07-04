@@ -56,14 +56,20 @@ function existingAssign($user_id, $category_id, $conn)
     return false;
   }
 }
-function existUser($conn){
+function existUser($conn)
+{
   $query = $conn->query("SELECT *  FROM category");
-  if (!(($query->num_rows  == 0))){return true;}
-  else{return false;}
+  if (!(($query->num_rows  == 0))) {
+    return true;
+  } else {
+    return false;
+  }
 }
-function ShowButton($conn){global $user_id;
-  if(existUser($conn)){
-  echo "<button type=\"submit\" name=\"category_id\" value=\"$user_id\" class=\"btn btn-info\">Senden</button>
+function ShowButton($conn)
+{
+  global $user_id;
+  if (existUser($conn)) {
+    echo "<button type=\"submit\" name=\"category_id\" value=\"$user_id\" class=\"btn btn-info\">Senden</button>
         <button type=\"reset\" name=\"button\" value=\"reset\" class=\"btn btn-warning\">Zurücksetzten</button>";
   }
 }
@@ -197,7 +203,7 @@ if (!empty($error)) {
           <?php view_checkBox_assign_user_category($conn, $user_id); ?>
         </tbody>
       </table>
-      <?php ShowButton($conn);?>
+      <?php ShowButton($conn); ?>
     </form>
   </div>
 </body>

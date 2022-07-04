@@ -21,9 +21,9 @@ if(isset($_GET['status'])){ //Wird ein GET-Request mit Status Attribut gesendet 
         $alert_class_name = "alert alert-info";
         $alert_message = "ToDo wurde unarchieviert";
     }}
-    if(getAllowedToDoIDs($conn,$user_ID) == null){ //Sind keine ToDos vorhanden
+    //Sind keine ToDos vorhanden
+    if(getAllowedToDoIDs($conn,$user_ID) == null){ 
         $alert_class_name = "alert alert-warning";
         $alert_message = "Es existieren noch keine ToDos";
         }
-    
 ?>
