@@ -1,4 +1,4 @@
-# Die ToDo Verwaltungssoftware V.1.0.0
+# Die ToDo Verwaltungssoftware V.1.1.0
 ## Beschreibung:
 Das ganze System ist durch zwei Nutzertypen unterteilt Admin und normale Benutzer,
 diese Software ermöglicht bequem ToDos zu verwalten, und diese zu kategorisieren.
