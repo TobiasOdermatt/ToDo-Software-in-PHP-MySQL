@@ -37,6 +37,12 @@ Der Admin verwaltet diese Kategorien.
 ### Bild des User-Panels Beispiel ToDo Liste:
 <img width="960" alt="image" src="https://user-images.githubusercontent.com/90388194/175053316-61ef56c6-449c-4d7c-89d5-61cb7a4ba028.png">
 
+### Bild von ToDo bearbeiten:
+<img width="958" alt="image" src="https://user-images.githubusercontent.com/90388194/177233134-b1899f3e-7db1-4ea7-a3ca-0465f905ed78.png">
+
+### Bild von Benutzer bearbeiten:
+<img width="959" alt="image" src="https://user-images.githubusercontent.com/90388194/177233247-adfbe908-d482-4e70-b91f-0b29b434e6ae.png">
+
 ### Bild des User-Panels ToDo anlegen:
 ![image](https://user-images.githubusercontent.com/90388194/175053553-c661f61b-b181-40c9-9a9d-cfdfaaff3c83.png)
 
