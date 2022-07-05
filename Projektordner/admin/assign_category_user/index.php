@@ -16,6 +16,7 @@ function readCheckBox($ArrayCheckbox, $conn, $category_id)
 {
   global $alert_message; //Ruft die Zuweisungsfunktion auf
   foreach ($ArrayCheckbox as $key => $user_id) {
+    if(!existingAssign($user_id, $category_id, $conn))
     assignUserCategory($category_id, $user_id, $conn);
     $alert_message = "Änderungen wurden gespeichert";
   }
@@ -23,18 +24,20 @@ function readCheckBox($ArrayCheckbox, $conn, $category_id)
   $query = $conn->query("SELECT ID FROM user where role = 'user'");
   if (!(($query->num_rows  == 0))) {
     while ($row = $query->fetch_array()) {
-      if (!(in_array($row["ID"], $ArrayCheckbox))) { // Wurde ein Feld nicht angewählt wird die Zuweisung gelöscht
+      if (!(in_array($row["ID"], $ArrayCheckbox)))  // Wurde ein Feld nicht angewählt wird die Zuweisung gelöscht
         delAssign($conn, $row["ID"], $category_id);
-      }
     }
   }
 }
+
+
 function delAssign($conn, $user_id, $category_id)
 { //Löscht eine Zuweisung
   $stmt = $conn->prepare("DELETE FROM user_has_categories WHERE user_ID = (?) AND category_category_id = (?)");
   $stmt->bind_param("ss", $user_id, $category_id);
   $stmt->execute();
 }
+
 function delEveryAssign($conn, $category_id)
 {
   $stmt = $conn->prepare("DELETE FROM user_has_categories WHERE category_category_id = (?)");
@@ -55,6 +58,7 @@ function existingAssign($user_id, $category_id, $conn)
     return false;
   }
 }
+
 function existUser($conn)
 {
   $query = $conn->query("SELECT * FROM user where role = 'user'");
@@ -79,6 +83,7 @@ function assignUserCategory($category_id, $user_id, $conn)
   $stmt->bind_param("ii", $user_id, $category_id);
   $stmt->execute();
 }
+
 function alreadyAssigned($category_id, $user_id, $conn)
 { //Überprüft ob es schon zugewiesen worden ist.
   if (existingAssign($user_id, $category_id, $conn)) {
@@ -87,6 +92,7 @@ function alreadyAssigned($category_id, $user_id, $conn)
     return "";
   }
 }
+
 function view_checkBox_assign_category_user($conn, $category_id)
 {
   $query = $conn->query("SELECT *  FROM user where role = 'user'");
