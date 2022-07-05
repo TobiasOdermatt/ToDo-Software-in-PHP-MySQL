@@ -43,20 +43,6 @@ function archiveToDo($ToDo_ID, $conn)
     header("location: ../index.php?status=unarchieved"); //Der Startseite wird die unarchiverung bestätigen
   }
 }
-//Überprüft ob eine Zuweisung vorhanden ist.
-function AssignExist($conn, $categoryID, $user_ID)
-{
-  $stmt = $conn->prepare("SELECT * FROM user_has_categories WHERE category_category_id = (?) AND user_ID = (?)");
-  $stmt->bind_param("ii", $categoryID, $user_ID);
-  $stmt->execute();
-  $stmt->store_result();
-  $countRows = $stmt->num_rows;
-  if ($countRows >= 1) { //Wurde ein Eintrag gefunden true wenn nicht false
-    return true;
-  } else {
-    return false;
-  }
-}
 
 //Lädt den Editmode | Werte des ToDos werden geladen und der Seitentext ändert sich
 function editToDo($ToDo_ID, $conn)
@@ -107,6 +93,7 @@ function getCategoryname($conn, $category_ID)
   $result = mysqli_query($conn, "SELECT Name from Category WHERE category_id = '$category_ID'");
   return mysqli_fetch_assoc($result)["Name"];
 }
+
 //Generiet eine Kategorie ID liste mit den Kategorien die der Benutzer erstellt hat.
 function generateCategorylist($conn, $user_ID, $edit_category_ID)
 {

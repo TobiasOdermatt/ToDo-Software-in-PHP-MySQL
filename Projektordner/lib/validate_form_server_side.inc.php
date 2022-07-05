@@ -34,6 +34,16 @@ function validateToDo($conn)
   }
 
   if (isset($_POST['category_ID'])) {
+    //Überprüft ob eine Zuweisung vorhanden ist.
+    function AssignExist($conn, $categoryID, $user_ID){ 
+      $stmt = $conn->prepare("SELECT * FROM user_has_categories WHERE category_category_id = (?) AND user_ID = (?)");
+      $stmt->bind_param("ii",$categoryID,$user_ID);
+      $stmt->execute();
+      $stmt->store_result();
+      $countRows = $stmt->num_rows;
+      if($countRows >= 1){ //Wurde ein Eintrag gefunden true wenn nicht false
+      return true;}else{return false;}
+      }
     //Überprüft ob der Benutzer die Berechtigung hat ein ToDo unter dieser Kategorie abzuspeichern
     if (AssignExist($conn, $_POST['category_ID'], $_SESSION["id"])) {
       $ToDo_category_ID = (int)$_POST['category_ID'];

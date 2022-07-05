@@ -16,6 +16,7 @@ function readCheckBox($ArrayCheckbox, $conn, $user_id)
 {
   global $alert_message; //Ruft die Zuweisungsfunktion auf
   foreach ($ArrayCheckbox as $key => $category_id) {
+    if(!existingAssign($user_id, $category_id, $conn))
     assignUserCategory($user_id, $category_id, $conn);
     $alert_message = "Änderungen wurden gespeichert";
   }
