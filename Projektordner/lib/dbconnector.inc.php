@@ -10,7 +10,7 @@ function admin_connect()
 	$host     = 'localhost';
 	$username = 'root';
 	$password = '';
-	$dbname = 'm151_db_tobias_odermatt';
+	$dbname = 'todo';
 	$conn = mysqli_connect($host, $username, $password, $dbname);
 	if (!$conn) {
 		die("Verbindung mit der Datenbank nicht möglich, kontaktieren Sie den Seitenadministrator.");
@@ -23,7 +23,7 @@ function user_connect()
 	$host     = 'localhost';
 	$username = 'root';
 	$password = '';
-	$dbname = 'm151_db_tobias_odermatt';
+	$dbname = 'todo';
 	$conn = mysqli_connect($host, $username, $password, $dbname);
 	if (!$conn) {
 		die("Verbindung mit der Datenbank nicht möglich, kontaktieren Sie den Seitenadministrator.");

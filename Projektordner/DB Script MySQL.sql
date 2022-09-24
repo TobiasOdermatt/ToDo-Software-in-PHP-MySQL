@@ -18,7 +18,8 @@
 --
 -- Table structure for table `category`
 --
-CREATE DATABASE ToDo;
+CREATE DATABASE todo;
+USE todo;
 DROP TABLE IF EXISTS `category`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
@@ -26,7 +27,7 @@ CREATE TABLE `category` (
   `category_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(25) NOT NULL,
   PRIMARY KEY (`category_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;a
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
